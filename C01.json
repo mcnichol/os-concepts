@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "book": "Operating System Concepts",
+    "edition": 10,
+    "asin": "B07CVKH7BD",
+    "isbn13": " 9781119320913",
+    "publishYear": 2018,
+    "authors": [{"firstName": "Abraham", "middleName": null, "lastName": "Silbershatz"},
+                {"firstName": "Peter", "middleName": "Baer", "lastName": "Galvin"},
+                {"firstName": "Greg", "middleName": null, "lastName": "Gagne"}]
+  },
+  "practiceExercises": [{ 
+    "number": "1.1", 
+    "question":"<div>What are the three main purposes of an operating system?</div>", 
+    "answerIndividual": "<div>The three main purposes of an operating system are to manage the computers hardware, act as an intermediary between the computer user and the computer hardware, and provide a bases for application programs to interface with the underlying system.</div>",
+    "answerKey": "<div>The three main purposes are:<ul><li>To provide an environment for a computer user to eecute programs on computer hardware in a convenient and efficient manner.</li><li>To allocate the separate resources of the computer as needed to solve the problem given. The allocation process should be as fair and efficient as possible.</li><li>As a control program it serves two major functions: (1)supervision of the execution of user programs to prevent errors and improper use of the computer, and (2) management of the operation and control of I/O devices.</li></ul></div>"
+  },{ 
+    "number": "1.2", 
+    "question":"<div>We have stressed the need for an operating system to make efficient use of the computing hardware. When is it appropriate for the operating system to forsake this principle and to <i>Waste</i> resources? Why is such a system not really wasteful?</div>", 
+    "answerIndividual": "<div>On single-user systems the system should be as efficient as possible maximizing resource utilization. When operating as a multi-user system, context switching and the overhead and dynamic nature of workloads being executed introduces potential lossses of efficiency for individual tasks in order to distribute resources in an apparent simultaneous manner to end-users. Resource utilization tends to be general purpose in nature and less specialized for a specific workload.</div>",
+    "answerKey": "<div>Single-user systems should maximize use of the system for the user. A GUI might <i>waste</i> CPU cycles, but it optimizes the user's interaction with the system.</div>"
+  },{ 
+    "number": "1.3",
+    "question":"<div>What is the main difficulty that a programmer must overcome in writing an operating system for a real-time environment?</div>",
+    "answerIndividual": "<div></div>",
+    "answerKey": "<div></div>"
+  },{ 
+    "number": "1.4",
+    "question":"<div>Keeping in mind the various definitions of <i>operating system</i>, consider whether the operating system should include applications such as web browsers and mail programs. Argue both that it should and that it should not, and support your answers.</div>",
+    "answerIndividual": "<div></div>",
+    "answerKey": "<div></div>"
+  },{ 
+    "number": "1.5",
+    "question":"<div>How does the distinction between kernel mode and user mode function as a rudimentary form of protection (security)?</div>",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{ 
+    "number": "1.6",
+    "question":"<div>Which of the following instructions should be privileged?<ol><li>Set value of timer.</li><li>Read the clock</li><li>Clear memory</li><li>Issue a trap instruction</li><li>Turn off interrupts</li><li>Modify entries in device-status table</li><li>Switch from user to kernel mode</li><li>Access I/O device</li></ol></div>",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{ 
+    "number": "1.7",
+    "question":"Some early computers protected the operating system by placing it in a memory partition that could not be modified by either the user job or the operating system itself. Describe two difficulties that you think could arise such a scheme.",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{ 
+    "number": "1.8",
+    "question":"Some CPUs provide for more than two modes of operation. What are two possible uses of these multiple modes?",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{ 
+    "number": "1.9",
+    "question":"Timers could be used to compute the current time. Provide a short description of how this could be accomplished.",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{ 
+    "number": "1.10",
+    "question":"Give two reasons why caches are useful. What problems do they solve? What problems do they cause? If a cache can be made as large as the device for which it is caching (for instance, a cache as large as a disk), why not make it that large and eliminate the device?",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{ 
+    "number": "1.11",
+    "question":"Distinguish between the client-server and peer-to-peer models of distributed systems",
+    "answerIndividual": "",
+    "answerKey": ""
+  }],
+  "furtherReading": [
+    "Stallings (2017) - Operating Systems, Internals and Design Principles 9E", 
+    "Tanenbaum (2014) - Modern Operating Systems", 
+    "Hennessy and Patterson (2012) - Computer Architecture: A Quantitative Approach 5E",
+    "Kurose and Ross (2017) - Computer Networking - A Top-Down Approach 7E",
+    "Russinovich et al. (2017) - Windows Internals Part 1 7E",
+    "McDougall and Mauro (2007) - Solaris Internals 2E",
+    "Levin (2013) - Max OS X and iOS Internals to the Apples Core",
+    "Levin (2015) - Android Internals - A Confectioner's Cookbook. Volume I", 
+    "Love (2010) - Linux Kernel Development 3E"
+  ]
+}
