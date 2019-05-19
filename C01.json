@@ -41,27 +41,27 @@
     "answerKey": ""
   },{ 
     "number": "1.7",
-    "question":"Some early computers protected the operating system by placing it in a memory partition that could not be modified by either the user job or the operating system itself. Describe two difficulties that you think could arise such a scheme.",
+    "question":"<div>Some early computers protected the operating system by placing it in a memory partition that could not be modified by either the user job or the operating system itself. Describe two difficulties that you think could arise such a scheme.</div>",
     "answerIndividual": "",
     "answerKey": ""
   },{ 
     "number": "1.8",
-    "question":"Some CPUs provide for more than two modes of operation. What are two possible uses of these multiple modes?",
+    "question":"<div>Some CPUs provide for more than two modes of operation. What are two possible uses of these multiple modes?</div>",
     "answerIndividual": "",
     "answerKey": ""
   },{ 
     "number": "1.9",
-    "question":"Timers could be used to compute the current time. Provide a short description of how this could be accomplished.",
+    "question":"<div>Timers could be used to compute the current time. Provide a short description of how this could be accomplished.</div>",
     "answerIndividual": "",
     "answerKey": ""
   },{ 
     "number": "1.10",
-    "question":"Give two reasons why caches are useful. What problems do they solve? What problems do they cause? If a cache can be made as large as the device for which it is caching (for instance, a cache as large as a disk), why not make it that large and eliminate the device?",
+    "question":"<div>Give two reasons why caches are useful. What problems do they solve? What problems do they cause? If a cache can be made as large as the device for which it is caching (for instance, a cache as large as a disk), why not make it that large and eliminate the device?</div>",
     "answerIndividual": "",
     "answerKey": ""
   },{ 
     "number": "1.11",
-    "question":"Distinguish between the client-server and peer-to-peer models of distributed systems",
+    "question":"<div>Distinguish between the client-server and peer-to-peer models of distributed systems</div>",
     "answerIndividual": "",
     "answerKey": ""
   }],
@@ -75,5 +75,86 @@
     "Levin (2013) - Max OS X and iOS Internals to the Apples Core",
     "Levin (2015) - Android Internals - A Confectioner's Cookbook. Volume I", 
     "Love (2010) - Linux Kernel Development 3E"
-  ]
+  ],
+  "exercises": [{
+    "number": "1.12",
+      "question":"<div>How do clustered systems differ from multiprocessor systems? What is required for two machines belonging to a cluster to cooperate to provide a highly available service?</div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.13",
+      "question":"<div>Consider a computing cluster consisting of two nodes running a database. Describe two ways in which the cluster software can manage access to the data on the disk. Discuss the benefits and disadvantages of each.</div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.14",
+      "question":"<div>What is the purpose of interrupts? How does an interrupt differ from a trap? Can traps be generated intentionally by a user program? If so, for what purpose?</div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.15",
+      "question":"<div>Explain how the Linux kernel variables <code>HZ</code> and <code>jiffies</code> can be used to determine the number of seconds the system has been running since it was booted.</div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.16",
+      "question":"<div>Direct memory access is used for high-speed I/O devices in order to avoid increasing the CPU's execution load.<ol><li>How does the CPU interface with the device to coordinate the transfer?</li><li>How does the CPU know when the memory operations are complete?</li><li>The CPU is allowed to execute other programs while the DMA controller is transferring data. Does this process interfere with the execution of the user programs? If so, describe what forms of interference are caused.</li></div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.17",
+      "question":"<div>Some computer systems do not provide a privileged mode of operation in hardware. Is it possible to construct a secure operating system for these computer systems? Give arguments both that it is and that it is not possible.</div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.18",
+      "question":"<div>Many SMP systems have different levels of caches; one level is local to each processing core, and another level is shared among all processing cores. Why are caching systems designed this way?</div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.19",
+      "question":"<div>Rank the following storage systems from slowest to fastest: <ol><li>Hard-disk drives</li><li>Registers</li><li>Optical disk</li><li>Main memory</li><li>Nonvolatile memory</li><li>Magnetic tapes</li><li>Cache</li></ol></div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.20",
+      "question":"<div>Consider an SMP system similar to the one shown in Figure 1.8.  Illustrate with an example how data residing in memory could in fact have a different value in each of the local caches.</div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.21",
+      "question":"<div>Discuss, with examples how the problem of maintaining coherence of cached data manifests itself in the following processing environments:<ol><li>Single-processor systems</li><li>Multiprocessor systems</li><li>Distributed systesm</li></ol></div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.22",
+      "question":"<div>Describe a mechanism for enforcing memory protection in order to prevent a program from modifying the memory associated with other programs.</div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.23",
+      "question":"<div>Which network configuration (LAN or WAN) would best suit the following environments?<ol><li>A campus student union</li><li>Several campus locations across a statewide university system</li><li>A neighborhood</li></ol></div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.24",
+      "question":"<div>Describe some of the challenges of designing operating systems for mobile devices compared with designing operating systems for traditional PCs.</div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.25",
+      "question":"<div>What are some advantages of peer-to-peer systems over client-server systems?</div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.26",
+      "question":"<div>Describe some distributed applications that would be appropriate for a peer-to-peer system.</div>",
+      "answerIndividual": "",
+      "answerKey": ""
+    },{
+    "number": "1.27",
+      "question":"<div>Identify several advantages and several disadvantages of open-source operating systems. Identify the types of people who would find each aspect to be an advantage or a disadvantage.</div>",
+      "answerIndividual": "",
+      "answerKey": ""
+  }]
 }
