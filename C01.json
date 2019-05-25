@@ -100,7 +100,7 @@
   "exercises": [{
     "number": "1.12",
       "question":"<div>How do clustered systems differ from multiprocessor systems? What is required for two machines belonging to a cluster to cooperate to provide a highly available service?</div>",
-      "answerIndividual": "",
+      "answerIndividual": "<div>Clustered systems are the grouping of several systems. They can be run asymmetrically (hot/warm) or symmetrically (active/active) monitoring each other and taking on more load should the other go down. A multiprocessor system is a single machine but several cores on that same machine. Each core has it's own individual caching and then some shared memory between the cores. To provide more efficient usage of resources and reduce contention on the system bus there are architectures like NUMA that rely on an interconnect between CPU's and treating memory as a single address space for all CPU's. For two systems to work together to provide a highly available service they must be monitoring one-another in an either active/passive or active/active manner.  Additionally a type of persistence must exist that is accessible from both systems. In order to deal with simultaneous reads and writes it requires a type of distributed lock manager as part of this cluster technology.</div>",
       "answerKey": ""
     },{
     "number": "1.13",
