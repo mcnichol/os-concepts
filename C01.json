@@ -140,42 +140,42 @@
     },{
     "number": "1.20",
       "question":"<div>Consider an SMP system similar to the one shown in Figure 1.8.  Illustrate with an example how data residing in memory could in fact have a different value in each of the local caches.</div>",
-      "answerIndividual": "",
-      "answerKey": ""
+      "answerIndividual": "If data is being handled by CPU0 and CPU1 within short succession the data may be stored off in the cpu's local cache where work is being performed. This can ultimately received updates to the values in local cache with CPU's trying to write back to main memory differing values for different states of data.",
+      "answerKey": "Say processor 1 reads data A with value 5 from main memory into its local cache. Similarly, processor 2 reads data A into its local cache as well. Processor 1 then updates A to 10. However, since A resides in processor 1's local cache, the update only occurs there and not in the local cache for processor 2."
     },{
     "number": "1.21",
-      "question":"<div>Discuss, with examples how the problem of maintaining coherence of cached data manifests itself in the following processing environments:<ol><li>Single-processor systems</li><li>Multiprocessor systems</li><li>Distributed systesm</li></ol></div>",
-      "answerIndividual": "",
-      "answerKey": ""
+      "question":"<div>Discuss, with examples how the problem of maintaining coherence of cached data manifests itself in the following processing environments:<ol><li>Single-processor systems</li><li>Multiprocessor systems</li><li>Distributed systems</li></ol></div>",
+      "answerIndividual": "<ol><li>Single Processor Systems: Caching in single processor systems is going to be the most straightforward. There is confidence that due to the single processor handling all work, it will be aware of all events executed on the cached data allowing it to follow efficient eviction strategies based on size of the cache as opposed to staleness of data</li><li>Multiprocessor systems: Maintaining coherence in multiprocessor systems will require a level of locking or shared lower-level caches amidst CPU's in order to not have side-effects on the data that is unknown to the other CPU's. This would mean that each CPU's independent cache would be shorter lived and persisted longer in a likely slower lower-level cache.</li><li>Distributed Systems: Distributed systems require a type of distributed lock manager on data in addition to more advanced cache writing strategies that are tuned to the read/write nature of I/O being performed. These are strategies such as write-through, write-around, and write-back</li></ol>",
+      "answerKey": "In single-processor systems, the memory needs to be updated when a processor issues updates to cached values. These updates can be performed immediately or in a lazy manner. In a multiprocessor system, different processors might be caching the same memory location in its local caches. When updates are made,the other cached locations need to be invalidated or updated. In distributed systems, consistency of cached memory values is not an issue. However consistency problems might arise when a client caches file data."
     },{
     "number": "1.22",
       "question":"<div>Describe a mechanism for enforcing memory protection in order to prevent a program from modifying the memory associated with other programs.</div>",
-      "answerIndividual": "",
-      "answerKey": ""
+      "answerIndividual": "Locks are mechanisms used for prventing programs from modifying the memory associated with other programs. More generally speaking memory management techniques are used to ensure address space for certain programs are made available only to that specfiic system. Memomry-addressing hardware ensures that processes can execute only within its own address space.",
+      "answerKey": "The processor could keep track of what locations are associated with each process and limit access to locations that are outside of a program's extent. Information regarding the extent of a program's memory could be maintained by using base and limits registers and by performing a check for every memory access."
     },{
     "number": "1.23",
       "question":"<div>Which network configuration (LAN or WAN) would best suit the following environments?<ol><li>A campus student union</li><li>Several campus locations across a statewide university system</li><li>A neighborhood</li></ol></div>",
-      "answerIndividual": "",
-      "answerKey": ""
+      "answerIndividual": "<ol><li>A campus student union: LAN</li><li>Several campus locations across a statewide university system: WAN</li><li>A neighborhood: Depending on the size of the neighborhood it could border on necessitating a WAN but you logically could utilize a LAN if it were only a couple of blocks with a handful of users.</li></ol>",
+      "answerKey": "<ol><li>LAN</li><li>WAN</li><li>LAN or WAN</li></ol>"
     },{
     "number": "1.24",
       "question":"<div>Describe some of the challenges of designing operating systems for mobile devices compared with designing operating systems for traditional PCs.</div>",
-      "answerIndividual": "",
-      "answerKey": ""
+      "answerIndividual": "Some of the challenges designing for mobile devices over traditional PC's would be the hardware limitations. Due to the smaller size of the enclosure this creates a lower limit for what is available from a RAM and CPU standpoint. Also power consumption becomes a factor requiring more efficient utilization with battery life being a tradeoff to CPU power.",
+      "answerKey": "The greatest chalenges in designing mobile operating systems include: Less storage capacity means the operating system must manage memory carefully. The operating system must also manage power consumption carefully. Less processing power plus fewer processors mean the operating system must carefully apportion processors to applications."
     },{
     "number": "1.25",
       "question":"<div>What are some advantages of peer-to-peer systems over client-server systems?</div>",
-      "answerIndividual": "",
-      "answerKey": ""
+      "answerIndividual": "Peer to peer systems can operate independently of a centralized server allowing more efficient communication directly between peers and reducing contention on a central point of failure.",
+      "answerKey": "Peer-to-peer is useful because services are distributed across a collection of peers, rather than having a single, centralized server. Peer-to-peer provides fault tolerance and redundancy. Also, because peers constantly migrate, they can provide a level of security over a server that always exists at a known location on the Internet. Peer-to-peer systems can also potentially provide higher network bandwidth because you can collectively use all the bandwidth of peers, rather than the bandwidth that is available to a single server."
     },{
     "number": "1.26",
       "question":"<div>Describe some distributed applications that would be appropriate for a peer-to-peer system.</div>",
-      "answerIndividual": "",
-      "answerKey": ""
+      "answerIndividual": "File-sharing systems where users act as both the client and the server.",
+      "answerKey": "Essentially anything that provides content, in addition to existing services such as file services, distributed directory services such as domain name services, and distributed e-mail services."
     },{
     "number": "1.27",
       "question":"<div>Identify several advantages and several disadvantages of open-source operating systems. Identify the types of people who would find each aspect to be an advantage or a disadvantage.</div>",
-      "answerIndividual": "",
-      "answerKey": ""
+      "answerIndividual": "A few advantages of an open source operating systems are the public domain and access that users have to the system and code itself. This allows better understanding and contribution to the internals from a wider audience. Some might argue there is behavioral side-effects in having people work to maintain a system as opposed to the arguably 'free work' that is performed from contributors and peer review of a potentially larger community. A disadvantage could be that there are bad actors that are able to exploit vulnerabilities through seeing what happens underneath the system enabling them to easily write exploits that is arguably easier as opposed to a private code base that must be reversed/accessed first. Also community members may come and go and oss sources may go stale if folks stop contributing to certain open systems.",
+      "answerKey": "Open source operating systems have the advantages of having many people working on them, many people debugging them, ease of access and distribution, and rapid update cycles. Further, for students and programmers there is certainly an advantage to being able to view and modify the source code. Typically open source operating systems are free for some forms of use, usually just requiring payment for support services. Commerical operating system companies usually do not like the competition that open source operating systems bring because these features are difficult to compete against. Some open source operating systems do not offer paid support programs. Some companies avoid open source projects because they need paid support, so that they have some entity to hold accountable if there is a problem or they need help fixing an issue. Finally, some complain that a lack of discipline in the coding of open source operating systems means that backward-compatibility is lacking making upgrades difficult, and that the frequent release cycle exacerbates these issues by forcing users to upgrade frequently."
   }]
 }
