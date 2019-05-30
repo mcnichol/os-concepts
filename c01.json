@@ -5,6 +5,8 @@
     "asin": "B07CVKH7BD",
     "isbn13": " 9781119320913",
     "publishYear": 2018,
+    "chapter": 1,
+    "chapterTitle": "Introduction",
     "authors": [{"firstName": "Abraham", "middleName": null, "lastName": "Silbershatz"},
                 {"firstName": "Peter", "middleName": "Baer", "lastName": "Galvin"},
                 {"firstName": "Greg", "middleName": null, "lastName": "Gagne"}]
