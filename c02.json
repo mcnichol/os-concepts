@@ -5,177 +5,161 @@
     "asin": "B07CVKH7BD",
     "isbn13": " 9781119320913",
     "publishYear": 2018,
+    "chapter": 2,
+    "chapterTitle": "Operating-System Structures",
     "authors": [{"firstName": "Abraham", "middleName": null, "lastName": "Silbershatz"},
                 {"firstName": "Peter", "middleName": "Baer", "lastName": "Galvin"},
                 {"firstName": "Greg", "middleName": null, "lastName": "Gagne"}]
   },
   "summary": [
-    "<div>An operating system is software that manages the computer hardware as well as providing an environment for application programs to run.</div>",
-    "<div>Interrupts are a key way in which hardware interacts with the operating system. A hardware device triggers an interrupt by sending a signal to the CPU to alert the CPU that some event requires attention. The interrupt is managed by the interrupt handler.</div>",
-    "<div>For a computer to do its job of executing programs, the programs must be in main memory, which is the only large storage area that the processor can access directly.</div>",
-    "<div>The main memory is usually a volatile storage device that loses its contents when power is turned off or lost.</div>",
-    "<div>Nonvolatile storage is an extension of main memory and is capable of holding large quantities of data permanently.</div>",
-    "<div>The most common nonvolatile storage device is a hard disk, which can provide storage of both programs and data.</div>",
-    "<div>The wide variety of storage systems in a computer system can be organized in a hierarchy according to speed and cost. The higher levels are expensive, but they are fast. As we move down the hierarchy, the cost per bit generally decreases, whereas the access time generally increases.</div>",
-    "<div>Modern computer architectures are multiprocessor systems in which each CPU contains several computing cores.</div>",
-    "<div>To best utilize the CPU, modern operating systems employ multiprogramming, which allows several jobs to be in memory at the same time,thus ensuring the the CPU always has a job to execute.</div>",
-    "<div>Multitasking is an extension of multiprogramming wherein CPU scheduling algorithms rapidly switch between processes, providing users with a fast response time.</div>",
-    "<div>To prevent user programs from interfering with the proper operation of the system, the system hardware has two modes: user mode and kernel mode.</div>",
-    "<div>Various instructions are privileged and can be executed only in kernel mode. Examples include the instruction to switch to kernel mode, I/O control, timer management, and interrupt management.</div>",
-    "<div>A process is the fundamental unit of work in an operating system. Process management includes creating and deleting processes and providing mechanisms for processes to communicate and synchronize with each other.</div>",
-    "<div>An operating system manages memory by keeping track of what parts of memory are being used and by whom. It is also responsible for dynamically allocating and freeing memory space.</div>",
-    "<div>Storage space is managed by the operating system; this includes providing file systems for representing files and directories and managing space on mass-storage devices.</div>",
-    "<div>Operating systems provide mechanisms for protecting and securing the operating system and users. Protection measures control the access of processes or users to the resources made available by the computer system.</div>",
-    "<div>Virtualization involves abstracting a computer's hardware into several different execution environments.</div>",
-    "<div>Data structures that are used in an operating system include lists, stacks, queues, trees, and maps.</div>",
-    "<div>Computing takes place in a variety of environments, including traditional computing, mobile computing, client-server systems, peer-to-peer systems, cloud computing, and real-time embedded systems.</div>",
-    "<div>Free and open-source operating systems are available in source-code format. Free software is licensed to allow no-cost use, redistribution, and modification. GNU/Linux, FreeBSD, and Solaris are examples of popular open-source systems.</div>"],
+    "An operating system provides an environment for the execution of programs by providing services to users and programs.",
+    "The three primary approaches for interacting with an operating system are (1) command interpreters, (2) graphical user interfaces, and (3) touch-screen interfaces.",
+    "System calls provide an interface to the services made available by an operating system. Programmers use a system call's application programming interface (API) for accessing system-call services.",
+    "System calls can be divided into six major categories: (1) process control, (2) file management, (3) device management, (4) information maintenance, (5) communications, and (6) protection.",
+    "The standard C library provides the system-call interface for UNIX and Linux systems.",
+    "Operating systems also include a collection of system programs that provide utilities to users.",
+    "A linker combines several relocatable object modules into a single binary executable file. A loader loads the executable file into memory, where it becomes eligible to run on an available CPU.",
+    "There are several reasons why applications are operating-system specific. These include different binary formats for program executables, different instruction sets for different CPUs, and system calls that vary from one operating sytem to another.",
+    "An operating system is designed with specific goals in mind. These goals ultimately determine the operating system's policies. An operating system implements these policies through specific mechanisms.",
+    "A monolithic operating system has no structure; all functionality is provided in a single, static binary file that runs in a single address space. Although such systems are difficult to modify, their primary benefit is efficiency.",
+    "A layered operating system is divided into a number of discrete layers, where the bottom layer is the hardware interface and the highest layer is the user interface. Although layered software systems have had some success, this approach is generally not ideal for designing operating systems due to performance problems.",
+    "The microkernel approach for designing operating systems uses a minimal kernel; most services run as user-level applications. Communication takes place via message passing.",
+    "A modular approach for designing operating systems provides operating system services through modules that can be loaded and removed during run time. Many contemporary operating systems are constructed as hybrid systems using a combination of a monolithic kernel and modules.",
+    "A boot loader loads an operating system into memory, performs initialization, and beings system execution."
+  ],
   "practiceExercises": [{ 
-    "number": "1.1", 
-    "question":"<div>What are the three main purposes of an operating system?</div>", 
-    "answerIndividual": "<div>The three main purposes of an operating system are to manage the computers hardware, act as an intermediary between the computer user and the computer hardware, and provide a bases for application programs to interface with the underlying system.</div>",
-    "answerKey": "<div>The three main purposes are:<ul><li>To provide an environment for a computer user to eecute programs on computer hardware in a convenient and efficient manner.</li><li>To allocate the separate resources of the computer as needed to solve the problem given. The allocation process should be as fair and efficient as possible.</li><li>As a control program it serves two major functions: (1)supervision of the execution of user programs to prevent errors and improper use of the computer, and (2) management of the operation and control of I/O devices.</li></ul></div>"
+    "number": "2.1", 
+    "question":"What is the purpose of system calls?", 
+    "answerIndividual": "The purpose of system calls is to provide an interface allowing users to make calls to the kernel without providing full privileges and access to the entire memory space. In this way the user can make a system call through c libraries and the cpu flag will be set to switch to kernel mode and will perform the work on behalf of what the user requested.",
+    "answerKey": "System calls allow user-level processes to request services of the operating system."
   },{ 
-    "number": "1.2", 
-    "question":"<div>We have stressed the need for an operating system to make efficient use of the computing hardware. When is it appropriate for the operating system to forsake this principle and to <i>Waste</i> resources? Why is such a system not really wasteful?</div>", 
-    "answerIndividual": "<div>On single-user systems the system should be as efficient as possible maximizing resource utilization. When operating as a multi-user system, context switching and the overhead and dynamic nature of workloads being executed introduces potential lossses of efficiency for individual tasks in order to distribute resources in an apparent simultaneous manner to end-users. Resource utilization tends to be general purpose in nature and less specialized for a specific workload.</div>",
-    "answerKey": "<div>Single-user systems should maximize use of the system for the user. A GUI might <i>waste</i> CPU cycles, but it optimizes the user's interaction with the system.</div>"
+    "number": "2.2", 
+    "question":"What is the purpose of the command interpreter? Why is it usually separate from the kernel?", 
+    "answerIndividual": "The command interpreter is used to get and execute the next user-specified command. The reason that the command interpreter is left separate from the kernel is to decouple these enabling the command interpreter to change without needing to change the kernel.",
+    "answerKey": "It reads commands from the user or from a file of commands and executes them, usually by turning them into one or more system calls. It is usually not part of the kernel since the command interpreter is subject to changes."
   },{ 
-    "number": "1.3",
-    "question":"<div>What is the main difficulty that a programmer must overcome in writing an operating system for a real-time environment?</div>",
-    "answerIndividual": "<div>A primary issue faced by real-time operating systems is the timing and sequence of events. Having these events execute in order and in a timely fashion can be critical to the functionality (and safety) of the system.</div>",
-    "answerKey": "<div>The main difficulty is keeping the operating system within the fixed time constraints of a real-time system.  If the system does not complete a task in a certain time-frame, it may cause a breakdown of the entire system it is running. Therefore when writing an operating system for a real-time system, the writer must be sure that his scheduling schemes don't allow response time to exceed the time constraint.</div>"
+    "number": "2.3", 
+    "question":"What system calls have to be executed by a command interpreter or shell in order to start a new process on a UNIX system?", 
+    "answerIndividual": "fork()",
+    "answerKey": "In Unix systems, a fork system call followed by an exec system call need to be performed to start a new process. The fork call clones the currently executing process, while the exec call overlays a new process based on a different executable over the calling process."
   },{ 
-    "number": "1.4",
-    "question":"<div>Keeping in mind the various definitions of <i>operating system</i>, consider whether the operating system should include applications such as web browsers and mail programs. Argue both that it should and that it should not, and support your answers.</div>",
-    "answerIndividual": "<div><div><b>Argument for O/S's Containing Browsers/Mail Apps:<b>Operating Systems should contain apps such as Browsers and Mail programs when considering the expected usaage of the operating system.  For Corporations distributing Operating Systems to machines of their employees these applications become a core system in how work is accomplished. Having base applications can provide a foundation of functinoality and consistency which devs can rely on to exist for integrations, security, and expand how operating systems are used moving forward.</div><div><b>Argument against O/S's Containing Browsers/Mail Apps:</b>It would not make sense to install application browsers and mail clients alongside operating/systems as it is tangential to the primary purpose of the Operating System itself. A more appropriate path is to allow users to select these apps that may (or may not) be critical to how they perform work and in that, choose which one is a best fit. In breaking these apps out from the Operating System we remove added areas which could cause vulneerabilities, additional overhead to the release cadence, ultimately increasing complexity in the base system image. To further extend this point, it would be impossible to determine which of these apps are actually core to the system vs userr add-ons therefore a module based system that users can select from would be ideal.</div></div>",
-    "answerKey": "<div>An argument in favor of including popular applications with the operating system is that if the application is embedded within the operating system, it is likely to be better able to take advantage of features in the kernel and therefore have performance advantages over an application that runs outside of the kernel. Arguments against however: (1) the applications are applications - and not part of an operating system, (2) any performance benefits of running within the kernel are offset by security vulnerabilities, (3) it leads to a bloated operating system.</div>"
+    "number": "2.4", 
+    "question":"What is the purpose of system programs?", 
+    "answerIndividual": "",
+    "answerKey": ""
   },{ 
-    "number": "1.5",
-    "question":"<div>How does the distinction between kernel mode and user mode function as a rudimentary form of protection (security)?</div>",
-    "answerIndividual": "The security behind user mode and kernel mode is driven by what user mode has access to. All calls from user-mode are made through system calls which are interfaces to the kernel where properties can be passed through registers or as blocks. Further the memory addressing space is limited to that particular user-mode session, this allows the kernel to be trusted to work across the entire memory space for multi-user without giving that same access to the user sessions. In this way kernel mode acts as a filter or constraint preventing user-mode free reign of system resources.",
-    "answerKey": "The distinction between kernel mode and user mode provides a rudimentary form of protection in the following manner. Certain instructions could be executed only when the CPU is in kernel mode. Similarly, hardware devices could be accessed only when the program is executing in kernel mode. Control over when interrupts could be enabled or disabled is also possible only when the CPU is in kernel mode. Consequently, the CPU has very limited capability when executing in user mode, thereby enforcing protectino of critical resources."
+    "number": "2.5", 
+    "question":"What is the main advantage of the layered approach to system design? What are the disadvantages of the layered approach?", 
+    "answerIndividual": "",
+    "answerKey": ""
   },{ 
-    "number": "1.6",
-    "question":"<div>Which of the following instructions should be privileged?<ol><li>Set value of timer.</li><li>Read the clock</li><li>Clear memory</li><li>Issue a trap instruction</li><li>Turn off interrupts</li><li>Modify entries in device-status table</li><li>Switch from user to kernel mode</li><li>Access I/O device</li></ol></div>",
-    "answerIndividual": "<div>Setting value of timer, clear memory, triggering a trap, turning off interrupts, modification of entries in device-status table, switch from user to kernel mode due.</div>",
-    "answerKey": "<div>The following operations need to be privileged. Set value of timer, clear memory, turn off interrupts, modify entries in device-status table, access I/O device. The rest can be performed in user mode.</div>"
+    "number": "2.6", 
+    "question":"List five services provided by an operating system, and explain how each creates convenience for users. In which cases would it be impossible for user-level programs to provide these services? Explain your answer.", 
+    "answerIndividual": "",
+    "answerKey": ""
   },{ 
-    "number": "1.7",
-    "question":"<div>Some early computers protected the operating system by placing it in a memory partition that could not be modified by either the user job or the operating system itself. Describe two difficulties that you think could arise with such a scheme.</div>",
-    "answerIndividual": "<div>Due to the volatile nature of memory this can lead to errors and the performance impact due to constant switching of contexts, and finally the continued growth of the entire operating system has ballooned which could increase demand and cost for memory resources on computers.</div>",
-    "answerKey": "<div>The data required by the operating system (passwords, access controls, accounting information, and so on) would have to be stored in or passed through unprotected memory and thus be accessible to unauthorized users.</div>"
+    "number": "2.7", 
+    "question":"Why do some systems store the operating system in firmware, while others store it on disk?", 
+    "answerIndividual": "",
+    "answerKey": ""
   },{ 
-    "number": "1.8",
-    "question":"<div>Some CPUs provide for more than two modes of operation. What are two possible uses of these multiple modes?</div>",
-    "answerIndividual": "<div>These multiple modes provide different tiers of privoleged access. Perhaps a user does not require access to all system resources but require more than a general user, privileged mode can be carved into varying levels of sensitivity. Second for virtualization, this can offer an opportunity to provide an embedded tiering of modes inside of a virtual machine that will have it's own kernel mode without providing risk to breaking out of the VM and executing privileged operations.</div>",
-    "answerKey": "<div>Although most systems only distinguish between user and kernel modes, some CPUs have supported multiple modes. Multiple modes could be used to provide a finer-grained security policy. For example, rather than distinguishing between just user and kernel mode, you could distinguish between different types of user mode. Perhaps user belonging to the same group could execute each other's code. The machine would go into a specified mode when one of these users was running code. When the machine was in this mode, a member of the group could run code belonging to anyone else in the group. Another possibility would be to provide different distinctions within kernel code. For example, a specific mode could allow USB device drivers to run. This would mean that USB devices could be serviced without having to switch to kernel mode, thereby essentially allowing USB device drivers to run in a quasi-user/kernel mode.</div>"
-  },{ 
-    "number": "1.9",
-    "question":"<div>Timers could be used to compute the current time. Provide a short description of how this could be accomplished.</div>",
-    "answerIndividual": "<div>The timer is set to throw an interrupt at a fixed rate. So for example a timer set to interrupt once every 60 seconds meaning each interrupt is a minute. A counter can be incremented that is a calculation of initial time at startup added to elapsed time providing the current time calculation.</div>",
-    "answerKey": "<div>A program could use the following approach to compute the current time using timer interrupts. The program could set a timer for some time in the future and go to sleep. When it is awakened by the interrupt it could update its local state, which it is using to keep track of the number of interrupts it has received thus far. It could then repeat this process of continually setting timer interrupts and updating its local state when the interrupts are actually raised.</div>"
-  },{ 
-    "number": "1.10",
-    "question":"<div>Give two reasons why caches are useful. What problems do they solve? What problems do they cause? If a cache can be made as large as the device for which it is caching (for instance, a cache as large as a disk), why not make it that large and eliminate the device?</div>",
-    "answerIndividual": "<div>Two reasons why caches are valuable is it provides a faster level access to datum that may be stored on slower drives. The most frequently used data (or whichever chosen algorithm) can determine what data will be most likely accessed and have it prepared for for access. Additionally sometimes raw data is stored in a way that requires some algorithm/operation of compute to access this. This overhead can be paid once on first access and subsequent accesses can bypass this computational preparation cost. The problem this creates (and in general with caches is a greater challenge) is the invalidation strategy and timeliness of data. Determining when data is no longer valid or has gone stale and should no longer be re-used can be a challenging process. The more time-sensitive data or the more random nature of data access can create a level of eviction that defeats the performance and cost of caching (arguably creating the potential of adding more overhead and complexity) making this less desirable a solution. The reason that you may not make the cache as large as a disk is due to the volatile nature of faster access systems (RAM, Registers) and lack of persistence. This also adds a significant increase in cost when the 80% of data accessed can be easily covered by a smaller affordable cache.</div>",
-    "answerKey": "<div>Caches are useful when two or more components need to exchange data, and the components perform transfers at differing speeds. Caches solve the transfer problem by providing a buffer of intermediate speed between the components. If the fast device finds the data it needs in the cache, it need not wait for the slower device. the data in the cache must be kept consistent with the data in the components. If a component has a data value change, and the datum is also in the cache, the cache must also be updated. This is especially a problem on multiprocessor systems where more than one process may be accessing a datum. A component may be eliminated by an equal-sized cache, but only if: (a) the cache and the component have equivalent state-saving capacity (that is, if the component retains its data when electricity is removed, the cache must retain data as well), and (b) the cache is affordable, because faster storage tends to be more expensive.</div>"
-  },{ 
-    "number": "1.11",
-    "question":"<div>Distinguish between the client-server and peer-to-peer models of distributed systems</div>",
-    "answerIndividual": "<div>Client-Server architecture is configured so that you are provided the endpoint (or a registry) that you will communicate with directly. There is software (or a browser) that you leverage as the client typically to communicate with the backing server. In a peer-to-peer model each client also has the ability to act as a server. This means that there is a network of clients that you are aware of and can communicate directly with other clients that may or may not handle or forward your requests in a server like fashion.</div>",
-    "answerKey": "<div><div>The client-server model firmly distinguishes the roles of the client and server. Under this model, the client requests services that are provided by the server. The peer-to-peer model doesn't have such strict roles. In fact, all nodes in the system are considered peers and thus may act as <i>either</i> clients or servers, or both. A node may request a service from another peer, or the node may in fact provide such a service to other peers in the system.</div><div>For example, let's consider a system of nodes that share cooking recipes. Under the client-server model, all recipes are stored with the server. If a client wishes to access a recipe, it must request the recipe from the specified server. Using the peer-to-peer model, a peer node could ask other peer nodes for the specified recipe. The node (or perhaps nodes) with the requested recipe could provide it to the requesting node. Notice how each peer may as both a client (it may request recipes) and as a server (it may provide recipes).</div></div>"
+    "number": "2.8", 
+    "question":"How could a system be designed to allow a choice of operating systems from which to boot? What would the bootstrap program need to do?", 
+    "answerIndividual": "",
+    "answerKey": ""
   }],
   "furtherReading": [
-    "Stallings (2017) - Operating Systems, Internals and Design Principles 9E", 
-    "Tanenbaum (2014) - Modern Operating Systems", 
-    "Hennessy and Patterson (2012) - Computer Architecture: A Quantitative Approach 5E",
-    "Kurose and Ross (2017) - Computer Networking - A Top-Down Approach 7E",
-    "Russinovich et al. (2017) - Windows Internals Part 1 7E",
-    "McDougall and Mauro (2007) - Solaris Internals 2E",
-    "Levin (2013) - Max OS X and iOS Internals to the Apples Core",
+    "Atlidakis (2016) - POSIX Abstractions in Modern Operating Systems: The Old, the New, and the Missing", 
+    "Bryant and O'Hallaron (2015) - Computer Systems: A Programmer's Perspective 3E", 
+    "Gregg (2014) - Systems Performance - Enterprise and the Cloud", 
+    "Levin (2013) - Mac OS X and iOS Internals to the Apple's Core", 
     "Levin (2015) - Android Internals - A Confectioner's Cookbook. Volume I", 
-    "Love (2010) - Linux Kernel Development 3E"
+    "Love (2010) - Linux Kernel Development 3E", 
+    "Mauerer (2008) - Professional Linux Kernel Architecture", 
+    "McDougall and Mauro (2007) - Solaris Internals 2E", 
+    "McKusick (2015) - The Design and Implementation of the FreeBSD UNIX Operating System 2E",
+    "Russinovich (2017) - Windows Internals - Part 1 7E",
+    "Ward (2015) - How LINUX Works - What Every Superuser Should Know 2E"
   ],
   "exercises": [{
-    "number": "1.12",
-      "question":"<div>How do clustered systems differ from multiprocessor systems? What is required for two machines belonging to a cluster to cooperate to provide a highly available service?</div>",
-      "answerIndividual": "<div>Clustered systems are the grouping of several systems. They can be run asymmetrically (hot/warm) or symmetrically (active/active) monitoring each other and taking on more load should the other go down. A multiprocessor system is a single machine but several cores on that same machine. Each core has it's own individual caching and then some shared memory between the cores. To provide more efficient usage of resources and reduce contention on the system bus there are architectures like NUMA that rely on an interconnect between CPU's and treating memory as a single address space for all CPU's. For two systems to work together to provide a highly available service they must be monitoring one-another in an either active/passive or active/active manner.  Sometimes these clusters require a type of persistence that is accessible from both systems. In order to deal with simultaneous reads and writes it requires a type of distributed lock manager as part of this cluster technology.</div>",
-      "answerKey": ""
-    },{
-    "number": "1.13",
-      "question":"<div>Consider a computing cluster consisting of two nodes running a database. Describe two ways in which the cluster software can manage access to the data on the disk. Discuss the benefits and disadvantages of each.</div>",
-      "answerIndividual": "<div>Two ways a computing cluster consisting of two nodes running a database can manage access to the data would be through a distributed lock manager if done in a symmetric clustering architecture or through asymmetric clustering where clusters run in an active/passive mode.</div>",
-      "answerKey": "<div>Consider the following two alternatives: <b>asymmetric clustering</b> and <b>parallel clustering</b>. With asymmetric clustering one host runs the database application with the other host simply monitoring it. If the server fails, the monitoring host becomes the active server. This is appropriate for providing redundancy. However, it does not utilize the potential processing power of both hosts. With parallel clustering the database application can run in parallel on both hosts. The difficulty in implementing parallel clusters is providing some form of distributed locking mechanism for files on the shared disk.</div>"
-    },{
-    "number": "1.14",
-      "question":"<div>What is the purpose of interrupts? How does an interrupt differ from a trap? Can traps be generated intentionally by a user program? If so, for what purpose?</div>",
-      "answerIndividual": "<div>The purpose of an interrupt is for a device to instruct the CPU that it would like control and has work to perform or even that work has completed. There are hardware interrupts and software interrupts. Software interrupts are traps, these can be errors, invalid memory access events, or system calls that software makes to interface with the kernel. Traps can be intentionally generated by a user program through the use of system calls. These system calls can perform privileged operations in kernel mode which cannot be issues from user-mode where the user program resides.</div>",
-      "answerKey": "<div>An interrupt is a hardware-generated change of flow within the system. An interrupt handler is summoned to deal with the cause of the interrupt; control is then returned to the interrupted context and instruction. A trap is a software-generated interrupt. An interrupt can be used to signal the completion of an I/O to obviate the need for device polling. A trap can be used to call operating syste mroutines or to catch arithmetic errors.</div>"
-    },{
-    "number": "1.15",
-      "question":"<div>Explain how the Linux kernel variables <code>HZ</code> and <code>jiffies</code> can be used to determine the number of seconds the system has been running since it was booted.</div>",
-      "answerIndividual": "Jiffies is the total number of timer interrupts that have executed since boot time. When computing the HZ this is the rate at how frequently the interrupts occur. So if we knew that a machine ran at 250 HZ this and jiffies was set at 1000 that would mean given 1000ms / 250hz = 4ms then 4ms * 1000j = 4s have elapsed.",
-      "answerKey": ""
-    },{
-    "number": "1.16",
-      "question":"<div>Direct memory access is used for high-speed I/O devices in order to avoid increasing the CPU's execution load.<ol><li>How does the CPU interface with the device to coordinate the transfer?</li><li>How does the CPU know when the memory operations are complete?</li><li>The CPU is allowed to execute other programs while the DMA controller is transferring data. Does this process interfere with the execution of the user programs? If so, describe what forms of interference are caused.</li></ol></div>",
-      "answerIndividual": "The CPU will set up buffers, pointers, and counters for the I/O device. The device controller will then transfer an entire block of data directly to/from the device and main memory directly. An interrupt is generated per block to inform the CPU that the operation is complete.",
-      "answerKey": "<div><ol><li>To initiate a DMA transfer, the CPU first sets up the DMA registers, which contain a pointer to the source of a transfer, a pointer to the destination of the transfer, and a counter of the number of bytes to be transferred. Then the DMA controller proceeds to place addresses on the bus to perform transfers, while the CPU is available to accomplish other work.</li><li>Once the entire transfer is finished, the DMA controller interrupts the CPU.</li><li>Both the CPU and the DMA controller are bus masters. A problem would be created if both the CPU and the DMA controller want to access the memory at the same time. Accordingly, the CPU shold be momentarily prevented from accessing main memory when the DMA controller seizes the memory bus. However, if the CPU is still allowed to access data in its primary and secondary caches, a coherency issue may be created if both the CPU and the DMA contrller update the same memory locations.</li></ol></div>"
-    },{
-    "number": "1.17",
-      "question":"<div>Some computer systems do not provide a privileged mode of operation in hardware. Is it possible to construct a secure operating system for these computer systems? Give arguments both that it is and that it is not possible.</div>",
-      "answerIndividual": "<div><div><h3>Argument that it is Possible:</h3><p>Witthout a privileged mode of operation you can still build a secure operating system by treating all hardware operations as privileged. It is then the responsibility of software beyond the operating system to ensure secure access and utilization of resources.</p></div><div><h3>Argument that it is Not Possible:</h3><p>It is not possible to have security within a system without security being a core part of the hardware and operations of the operating system itself. This leads to resolving the chicken/egg scenario on startup and confirming passwords/secrets are stored. With a trusted system on startup we can now rely on the operating system to switch into privileged modes of operation allowing varying levels of user access for resource consumption.</p></div></div>",
-      "answerKey": ""
-    },{
-    "number": "1.18",
-      "question":"<div>Many SMP systems have different levels of caches; one level is local to each processing core, and another level is shared among all processing cores. Why are caching systems designed this way?</div>",
-      "answerIndividual": "<div>L1 Cache is smaller faster cache independent to the CPU. L2 Cache is larger, slower, and shares memory space with other CPU's.</div>",
-      "answerKey": "<div>The different levels are based on access speed as well as size. In general, the closer the cache is to the CPU, the faster the access. However, faster caches are typically more costly. Therefore, smaller and faster caches are placed local to each CPU, and shared caches that are larger, yet slower, are shared among several different processors.</div>"
-    },{
-    "number": "1.19",
-      "question":"<div>Rank the following storage systems from slowest to fastest: <ol><li>Hard-disk drives</li><li>Registers</li><li>Optical disk</li><li>Main memory</li><li>Nonvolatile memory</li><li>Magnetic tapes</li><li>Cache</li></ol></div>",
-      "answerIndividual": "<div><ol><li>Magnetic Tapes</li><li>Optical Disk</li><li>Hard Disk Drives</li><li>Nonvolative Memory</li><li>Main Memory</li><li>Cache</li><li>Registers</li></ol></div>",
-      "answerKey": ""
-    },{
-    "number": "1.20",
-      "question":"<div>Consider an SMP system similar to the one shown in Figure 1.8.  Illustrate with an example how data residing in memory could in fact have a different value in each of the local caches.</div>",
-      "answerIndividual": "If data is being handled by CPU0 and CPU1 within short succession the data may be stored off in the cpu's local cache where work is being performed. This can ultimately received updates to the values in local cache with CPU's trying to write back to main memory differing values for different states of data.",
-      "answerKey": "Say processor 1 reads data A with value 5 from main memory into its local cache. Similarly, processor 2 reads data A into its local cache as well. Processor 1 then updates A to 10. However, since A resides in processor 1's local cache, the update only occurs there and not in the local cache for processor 2."
-    },{
-    "number": "1.21",
-      "question":"<div>Discuss, with examples how the problem of maintaining coherence of cached data manifests itself in the following processing environments:<ol><li>Single-processor systems</li><li>Multiprocessor systems</li><li>Distributed systems</li></ol></div>",
-      "answerIndividual": "<ol><li>Single Processor Systems: Caching in single processor systems is going to be the most straightforward. There is confidence that due to the single processor handling all work, it will be aware of all events executed on the cached data allowing it to follow efficient eviction strategies based on size of the cache as opposed to staleness of data</li><li>Multiprocessor systems: Maintaining coherence in multiprocessor systems will require a level of locking or shared lower-level caches amidst CPU's in order to not have side-effects on the data that is unknown to the other CPU's. This would mean that each CPU's independent cache would be shorter lived and persisted longer in a likely slower lower-level cache.</li><li>Distributed Systems: Distributed systems require a type of distributed lock manager on data in addition to more advanced cache writing strategies that are tuned to the read/write nature of I/O being performed. These are strategies such as write-through, write-around, and write-back</li></ol>",
-      "answerKey": "In single-processor systems, the memory needs to be updated when a processor issues updates to cached values. These updates can be performed immediately or in a lazy manner. In a multiprocessor system, different processors might be caching the same memory location in its local caches. When updates are made,the other cached locations need to be invalidated or updated. In distributed systems, consistency of cached memory values is not an issue. However consistency problems might arise when a client caches file data."
-    },{
-    "number": "1.22",
-      "question":"<div>Describe a mechanism for enforcing memory protection in order to prevent a program from modifying the memory associated with other programs.</div>",
-      "answerIndividual": "Locks are mechanisms used for prventing programs from modifying the memory associated with other programs. More generally speaking memory management techniques are used to ensure address space for certain programs are made available only to that specfiic system. Memomry-addressing hardware ensures that processes can execute only within its own address space.",
-      "answerKey": "The processor could keep track of what locations are associated with each process and limit access to locations that are outside of a program's extent. Information regarding the extent of a program's memory could be maintained by using base and limits registers and by performing a check for every memory access."
-    },{
-    "number": "1.23",
-      "question":"<div>Which network configuration (LAN or WAN) would best suit the following environments?<ol><li>A campus student union</li><li>Several campus locations across a statewide university system</li><li>A neighborhood</li></ol></div>",
-      "answerIndividual": "<ol><li>A campus student union: LAN</li><li>Several campus locations across a statewide university system: WAN</li><li>A neighborhood: Depending on the size of the neighborhood it could border on necessitating a WAN but you logically could utilize a LAN if it were only a couple of blocks with a handful of users.</li></ol>",
-      "answerKey": "<ol><li>LAN</li><li>WAN</li><li>LAN or WAN</li></ol>"
-    },{
-    "number": "1.24",
-      "question":"<div>Describe some of the challenges of designing operating systems for mobile devices compared with designing operating systems for traditional PCs.</div>",
-      "answerIndividual": "Some of the challenges designing for mobile devices over traditional PC's would be the hardware limitations. Due to the smaller size of the enclosure this creates a lower limit for what is available from a RAM and CPU standpoint. Also power consumption becomes a factor requiring more efficient utilization with battery life being a tradeoff to CPU power.",
-      "answerKey": "The greatest chalenges in designing mobile operating systems include: Less storage capacity means the operating system must manage memory carefully. The operating system must also manage power consumption carefully. Less processing power plus fewer processors mean the operating system must carefully apportion processors to applications."
-    },{
-    "number": "1.25",
-      "question":"<div>What are some advantages of peer-to-peer systems over client-server systems?</div>",
-      "answerIndividual": "Peer to peer systems can operate independently of a centralized server allowing more efficient communication directly between peers and reducing contention on a central point of failure.",
-      "answerKey": "Peer-to-peer is useful because services are distributed across a collection of peers, rather than having a single, centralized server. Peer-to-peer provides fault tolerance and redundancy. Also, because peers constantly migrate, they can provide a level of security over a server that always exists at a known location on the Internet. Peer-to-peer systems can also potentially provide higher network bandwidth because you can collectively use all the bandwidth of peers, rather than the bandwidth that is available to a single server."
-    },{
-    "number": "1.26",
-      "question":"<div>Describe some distributed applications that would be appropriate for a peer-to-peer system.</div>",
-      "answerIndividual": "File-sharing systems where users act as both the client and the server.",
-      "answerKey": "Essentially anything that provides content, in addition to existing services such as file services, distributed directory services such as domain name services, and distributed e-mail services."
-    },{
-    "number": "1.27",
-      "question":"<div>Identify several advantages and several disadvantages of open-source operating systems. Identify the types of people who would find each aspect to be an advantage or a disadvantage.</div>",
-      "answerIndividual": "A few advantages of an open source operating systems are the public domain and access that users have to the system and code itself. This allows better understanding and contribution to the internals from a wider audience. Some might argue there is behavioral side-effects in having people work to maintain a system as opposed to the arguably 'free work' that is performed from contributors and peer review of a potentially larger community. A disadvantage could be that there are bad actors that are able to exploit vulnerabilities through seeing what happens underneath the system enabling them to easily write exploits that is arguably easier as opposed to a private code base that must be reversed/accessed first. Also community members may come and go and oss sources may go stale if folks stop contributing to certain open systems.",
-      "answerKey": "Open source operating systems have the advantages of having many people working on them, many people debugging them, ease of access and distribution, and rapid update cycles. Further, for students and programmers there is certainly an advantage to being able to view and modify the source code. Typically open source operating systems are free for some forms of use, usually just requiring payment for support services. Commerical operating system companies usually do not like the competition that open source operating systems bring because these features are difficult to compete against. Some open source operating systems do not offer paid support programs. Some companies avoid open source projects because they need paid support, so that they have some entity to hold accountable if there is a problem or they need help fixing an issue. Finally, some complain that a lack of discipline in the coding of open source operating systems means that backward-compatibility is lacking making upgrades difficult, and that the frequent release cycle exacerbates these issues by forcing users to upgrade frequently."
+    "number": "2.9",
+    "question":"The services and functions provided by an operating system can be divided into two main categories. Briefly describe the two categories, and discuss how they differ.",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.10",
+    "question":"Describe three general methods for passing parameters to the operating system.",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.11",
+    "question":"Describe how you could obtain a statistical profile of the amount of time a program spends executing different sections of its code. Discuss the importance of obtaining such a statistical profile.",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.12",
+    "question":"What are the advantages and disadvantages of using the same system-call interface for manipulating both files and devices?",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.13",
+    "question":"Would it be possible for the user to develop a new command interpreter using the system-call interface provided by the operating system?",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.14",
+    "question":"Describe why Android uses ahead-of-time (AOT) rather than just-in-time (JIT) compilation.",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.15",
+    "question":"What are the two models of interprocess communication? What are the strengths and weaknesses of the two approaches?",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.16",
+    "question":"Contrast and compare an aplication programming interface (API) and an application binary interface (ABI).",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.17",
+    "question":"Why is the separation of mechanism and policy desirable?",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.18",
+    "question":"It is sometimes difficult to achieve a layered approach if two components of the operating system are depndent on each other. Identify a scenario in which it is unclear how to layer two system components that require tight coupling of their functionalities.",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.19",
+    "question":"What is the main advantage of a microkernel approach to system design? How do user programs and system services interact in a microkernel architecture? What are the disadvantages of using the microkernel approach?",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.20",
+    "question":"What are the advantages of using loadable kernel modules?",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.21",
+    "question":"How are iOS and Android similar? How are they different?",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.22",
+    "question":"Explain why Java programs running on Android systems do not use the standard Java API and virtual machine.",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.23",
+    "question":"The experimental Synthesis operating system has an assembler incorporated in the kernel. To optimize system-call performance, the kernel assembles routines within kernel space to minimize the path that the system call must take through the kernel. This approach is the antithesis of the layered approach, in which the path through the kernel is extended to make building the operating system easier. Discuss the pros and cons of the Synthesis approach to kernel design and system-performance optimization.",
+    "answerIndividual": "",
+    "answerKey": ""
+  },{
+    "number": "2.24",
+    "question":"In Section 2.3, we described a program that copies the contents of one file to a destination file. This program works by first prompting the user for the name of the source and destination files. Write this program using either the POSIX or Windows API. Be sure to include all necessary error checking, including ensuring that the source file exists. Once you have correctly designed and tested the program, if you used a system that supports it, run the program using a utility that traces system calls. Linux systems provide the strace utility, and macOS systems use the dtruss command. (The dtruss command, which actually is a front end to dtrace, requires admin privileges, so it must be run using sudo.) These tools can be used as follows (assume that the name of the executable file is FileCopy",
+    "answerIndividual": "",
+    "answerKey": ""
   }]
 }
