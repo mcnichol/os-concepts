@@ -60,13 +60,13 @@
   },{ 
     "number": "2.7", 
     "question":"Why do some systems store the operating system in firmware, while others store it on disk?", 
-    "answerIndividual": "",
-    "answerKey": ""
+    "answerIndividual": "Some systems may store the operating system in firmware due to the simplicity of the operating system and system resources being leveraged. If it is small enough in form factor it may not actually have the space necessary to store it on disk.",
+    "answerKey": "For certain devices, such as handheld PDAs and cellular telephones, a disk with a file system may not be available for the device. In this situation, the operating system must be stored in firmware."
   },{ 
     "number": "2.8", 
     "question":"How could a system be designed to allow a choice of operating systems from which to boot? What would the bootstrap program need to do?", 
-    "answerIndividual": "",
-    "answerKey": ""
+    "answerIndividual": "A system could be designed using something such as the GRUB bootloader where the user is provided a list of options for operating system. Upon selection this would need to point to a configuration that would provide mappings to the kernel location and the root file-system identifier.",
+    "answerKey": "Consider a system that would like to run both Windows XP and three different distributions of Linux (e.g. RedHat, Debian, and Mandrake). Each operating system will be stored on disk. During system boot-up a special program (which we will call the boot manager) will determine which operating system to boot into. This means that rather initially booting to an operating system, the boot manager will first run during system startup. It is this boot manager that is responsible for determining which system to boot into. Typically the boot managers must be stored at certain locations of the hard disk to be recognized during system startup. Boot managers often provide the user with a selection of systems to boot into; boot managers are also typically designed to boot into a default operating system if no choice is selected by the user."
   }],
   "furtherReading": [
     "Atlidakis (2016) - POSIX Abstractions in Modern Operating Systems: The Old, the New, and the Missing", 
@@ -85,7 +85,7 @@
     "number": "2.9",
     "question":"The services and functions provided by an operating system can be divided into two main categories. Briefly describe the two categories, and discuss how they differ.",
     "answerIndividual": "The two main categories of services and functions are user basd and system based. User based services are around providing access and ease-of-use to the user in order to interact with and manage system resources. The system based services are for efficient operation of th system itself. They differ in the fact that user focused functions and services are about providing an interface or connection to the user in order to leverage system resources whereas system functions and services are more to do with behaviors on behalf of the system, how they are used efficiently and properly cataloged/protected as events of the system.",
-    "answerKey": ""
+    "answerKey": "One class of services provided by an operating system is to enforce protection between different processes running concurrently in the system. Processes are allowed to access only those memory locations that are associated with their address spaces. Also, processes are not allowed to corrupt files associated with other users. A process is not allowed to access devices directly without operating system intervention. The second class of services provided by an operating system is to provide new functionality that is not supported directly by the underlying hardware. Virtual memory and file systems are two such examples of new services provided by an operating system."
   },{
     "number": "2.10",
     "question":"Describe three general methods for passing parameters to the operating system.",
