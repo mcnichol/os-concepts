@@ -89,13 +89,13 @@
   },{
     "number": "2.10",
     "question":"Describe three general methods for passing parameters to the operating system.",
-    "answerIndividual": "",
+    "answerIndividual": "Three general methods for passing parameters to the operating system are passing them via registers, they may be stored in a block or table in memory and the address to that block or table is passsed as a parameter in the register, or they may be pushed onto a stack by the application and popped off the stack by by the operating system.",
     "answerKey": ""
   },{
     "number": "2.11",
     "question":"Describe how you could obtain a statistical profile of the amount of time a program spends executing different sections of its code. Discuss the importance of obtaining such a statistical profile.",
-    "answerIndividual": "",
-    "answerKey": ""
+    "answerIndividual": "Through using the system provided time profiles of programs you can retrieve information about execution.  Combining this with a type of tracing utility and you can have a program that can analyze the time spent in different sections of code. It would require some relative knowledge of what function the breakpoints referred to, stepping through every function level, or leveraging regular timer interrupts to record the value of the program counter.  Providing this level of detail can highlight potential hot-spots and have a clear picture on the behavior of an application with metrics. This helps us to remove ambiguity with clearly defined information.",
+    "answerKey": "One could issue periodic timer interrupts and monitor what instructions or what sections of code are currently executing when the interrupts are delivered. A statistical profile of which pieces of code were active should be consistent with the time spent by the program in different sections of its code. Once such a statistical profile has been obtained, the programmer could optimize those sections of code that are consuming more of the CPU resources."
   },{
     "number": "2.12",
     "question":"What are the advantages and disadvantages of using the same system-call interface for manipulating both files and devices?",
