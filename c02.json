@@ -99,8 +99,8 @@
   },{
     "number": "2.12",
     "question":"What are the advantages and disadvantages of using the same system-call interface for manipulating both files and devices?",
-    "answerIndividual": "",
-    "answerKey": ""
+    "answerIndividual": "An advantage of having the same system call interface would be for simplicity. Files and devices can be mounted in such a way that they appear the same to the system. A disadvantage of having both be the same would be forcing all interaction with these two constructs to follow the same patterns should there be device specific calls that must be made. They would likely need to be adopted by files or respond in such a way that a noop would be generated which is uneeded additional complexity.",
+    "answerKey": "Each deice can be accessed as though it was a file in the file system. Since most of the kernel deals with devices through this file interface it is relatively easy to add a new device driver by implementing the hardware-specific code to support this abstract file interface. Therefore, this benefits the development of both user program code, which can be written to access devices and files in the same manner, and device driver code, which can be written to support a well-defined API. The disadvantage with using the same interface is that it might be difficult to capture the functionality of certain devices within the context of the file access API, thereby resulting in either a loss of functionality or a loss of performance. Some of this could be overcome by the use of the ioctl operation that provides a general-purpose interface for processes to invoke operations on devices."
   },{
     "number": "2.13",
     "question":"Would it be possible for the user to develop a new command interpreter using the system-call interface provided by the operating system?",
