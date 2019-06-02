@@ -104,8 +104,8 @@
   },{
     "number": "2.13",
     "question":"Would it be possible for the user to develop a new command interpreter using the system-call interface provided by the operating system?",
-    "answerIndividual": "",
-    "answerKey": ""
+    "answerIndividual": "This could be done. The user would be responsible for connecting to the system-call interface through either shared programs, C libraries, or performing the low level execution of these system calls and appropriate argument passing through memory registers/blocks. This can be a wholistic command interpreter that has functionality embedded as part of the interpreter or can shell out the commands to modules/system programs that can perform the communication to the kernel through the system-call interface.",
+    "answerKey": "The command interpreter reads commands from the user or from a file of commands and executres them, usually by turning them into one or more system calls. It is usually not part of the kernel since the command interpreter is subject to changes. A user should be able to develop a new command interpreter using the system-call interface provided by the operating system. The command interpreter allows a user to create and manage processes and also determine ways by which they communicate (such as through pipes and files). As all of this functionality could be accessed by a user-level program using the system-calls, it should be possible for the user to develop a new command-line interpreter. "
   },{
     "number": "2.14",
     "question":"Describe why Android uses ahead-of-time (AOT) rather than just-in-time (JIT) compilation.",
