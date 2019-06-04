@@ -114,8 +114,8 @@
   },{
     "number": "2.15",
     "question":"What are the two models of interprocess communication? What are the strengths and weaknesses of the two approaches?",
-    "answerIndividual": "",
-    "answerKey": ""
+    "answerIndividual": "The two models of interprocess communication are through shared-memory model and message-passing model. In the shared memory model processes create and attach to memory space and coordinate CRUD operations on that shared memory. The advantage is at system memory speed but comes at the cost of potential vulnerabilities in the protection model and synchronization of data. In message-passing the processes communicate directly with one another. This avoids conflicts and can work well on small amounts of data at a time but incurs an overhead with each call as the processes themselves are responsible for setting up and closing the connection to processes.",
+    "answerKey": "The two models of interprocess communication are message-passing model and the shared-memory model. Message passing is useful for exchanging smaller amounts of data, becasue no conflicts need be avoided. It is also easier to implement than is shared memory for intercomputer communication. Shared memory allows maximum speed and convenience of communication, since it can be done at memory transfer speeds when it takes place within a computer. However, this method compromises on protection and synchronization between the processes sharing memory."
   },{
     "number": "2.16",
     "question":"Contrast and compare an aplication programming interface (API) and an application binary interface (ABI).",
