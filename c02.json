@@ -109,7 +109,7 @@
   },{
     "number": "2.14",
     "question":"Describe why Android uses ahead-of-time (AOT) rather than just-in-time (JIT) compilation.",
-    "answerIndividual": "",
+    "answerIndividual": "AOT compilation will compile the source code down to machine code making it more efficient in terms of execution and reducing power consumption. Due to the low power consumption desires of mobile devices where battery life and mobility are critical, this is an important feature.",
     "answerKey": ""
   },{
     "number": "2.15",
