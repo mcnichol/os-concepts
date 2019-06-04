@@ -124,8 +124,8 @@
   },{
     "number": "2.17",
     "question":"Why is the separation of mechanism and policy desirable?",
-    "answerIndividual": "",
-    "answerKey": ""
+    "answerIndividual": "Mechanisms dictate how something works within a system and policy dictates what will happen. Mechansims are components within this system that ideally can be consumed where policy can dictate what the actual behavior will be. Because programs may need to consume mechanisms in various ways whether they are IO intensive systems or the opposite, being able to change the policy irrespective of the mechanism can provide a level of flexibility making an operating system available and capable of meeting a broader set of use-cases.",
+    "answerKey": "Mechanism and policy must be separate to ensure that systems are easy to modify. No two system installations are the same, so each installation may want to tune the operating system to suit its needs. With mechanism and policy separate, the policy may be changed at will while the mechanism stays unchanged. This arrangement provides a more flexible system."
   },{
     "number": "2.18",
     "question":"It is sometimes difficult to achieve a layered approach if two components of the operating system are depndent on each other. Identify a scenario in which it is unclear how to layer two system components that require tight coupling of their functionalities.",
