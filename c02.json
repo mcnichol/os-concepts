@@ -118,9 +118,9 @@
     "answerKey": "The two models of interprocess communication are message-passing model and the shared-memory model. Message passing is useful for exchanging smaller amounts of data, becasue no conflicts need be avoided. It is also easier to implement than is shared memory for intercomputer communication. Shared memory allows maximum speed and convenience of communication, since it can be done at memory transfer speeds when it takes place within a computer. However, this method compromises on protection and synchronization between the processes sharing memory."
   },{
     "number": "2.16",
-    "question":"Contrast and compare an aplication programming interface (API) and an application binary interface (ABI).",
-    "answerIndividual": "",
-    "answerKey": ""
+    "question":"Contrast and compare an application programming interface (API) and an application binary interface (ABI).",
+    "answerIndividual": "An application programming interface provides interfaces detailing how to communicate with functions alongside proper arguments which are consumed by the underlying implementation abstracted away from the user. Coming from the other end at a hardware level, the application binary interface is the interface detailing how to communicate with the operating systems understanding what registers and values must be provided and what to expect in response.",
+    "answerKey": "APIs specify certain functions at the application level. At the architecture level, an application binary interface is used to define how different components of binary code can interface for a given operating system on a given architecture. An ABI specifies low-level details, including address width, methods of passing parameters to system calls, the organization of the run-time stack etc. ABI's are typically specified for a given architecture providing little in terms of cross-platform compatibility."
   },{
     "number": "2.17",
     "question":"Why is the separation of mechanism and policy desirable?",
