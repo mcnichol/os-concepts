@@ -144,13 +144,13 @@
   },{
     "number": "2.21",
     "question":"How are iOS and Android similar? How are they different?",
-    "answerIndividual": "",
-    "answerKey": ""
+    "answerIndividual": "iOS and Android are similar due to the fact they are mobile based operating systems that must make tradeoffs on performance vs power consumption and efficient utilization of resources. They differ in the restrictive nature iOS has placed on these devices and limiting direct access to POSIX and BSD apis whereas in Java you can perform JNI calls to directly access hardware resources.",
+    "answerKey": "Similarities: Both are based on existing kernels (Linux and Mac OSX). Both have architecture that uses software stacks. Both provide frameworks for developers.  Differences: iOS is closed-source and Android is open-source. iOS applications are developed in Objective-C and Android in Java. Android uses a virtual machine and iOS executes code natively."
   },{
     "number": "2.22",
     "question":"Explain why Java programs running on Android systems do not use the standard Java API and virtual machine.",
-    "answerIndividual": "",
-    "answerKey": ""
+    "answerIndividual": "Because Android is running on mobile hardware which can be limited in memory and cpu, AOT is used where all instructions are compiled to machine code instead of JIT compilation which compiles java down to bytecode and then optimizes hotter regions into native machine instructions. The Android Runtime leverages AOT allowing more efficient application execution as well as lower power consumption. The Android API's are also built to consider the underlying hardware and frameworks leveraged within a mobile system.",
+    "answerKey": "It is because the standard API and virutal machine are designed for desktop and server systems, not mobile devices. Google developed a separate API and virtual machine for mobile devices."
   },{
     "number": "2.23",
     "question":"The experimental Synthesis operating system has an assembler incorporated in the kernel. To optimize system-call performance, the kernel assembles routines within kernel space to minimize the path that the system call must take through the kernel. This approach is the antithesis of the layered approach, in which the path through the kernel is extended to make building the operating system easier. Discuss the pros and cons of the Synthesis approach to kernel design and system-performance optimization.",
