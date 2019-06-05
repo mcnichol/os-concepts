@@ -139,8 +139,8 @@
   },{
     "number": "2.20",
     "question":"What are the advantages of using loadable kernel modules?",
-    "answerIndividual": "",
-    "answerKey": ""
+    "answerIndividual": "LKM's provide a savings on communication due to the fact it does not require message passing and can communicate directly to other modules. They are also dynamic in the sense you can have a core set of services part of the kernel and then dynamically load more services as you reach boot. This provides a level of optionality on having a flexible system that can perform as efficiently as a monolith without the monolithic bundle of services that must move as a single deployment.",
+    "answerKey": "It is difficult to predict what features an operating system will need when it is being designed. The advantage of using loadable kernel modules is that functionality can be added to and removed from the kernel while it is running. There is no need to either recompile or reboot the kernel."
   },{
     "number": "2.21",
     "question":"How are iOS and Android similar? How are they different?",
